@@ -1,0 +1,19 @@
+services:
+  stylespace_2:
+    container_name: stylespace_2_kitani
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: ss2_stylegan2
+    user: "3059:1000"
+    volumes:
+      - .:/workspace
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              device_ids: ['1']   # ★ここ追加
+              capabilities: [gpu]
+    tty: true
+    stdin_open: true
