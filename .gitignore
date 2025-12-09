@@ -3,3 +3,9 @@ StyleSpace/
 Dockerfile.fullbackup
 
 miniconda3/
+
+.gitignore
+=3.9
+=3.8
+code/pycache/
+code/__pycache__/
